@@ -1,0 +1,18 @@
+# Uploaded report images
+uploads/*
+
+# Keep the uploads folder itself
+!uploads/.gitkeep
+
+# Database backups
+*.sql
+!database/roadwatch_db.sql
+
+# Environment/config files
+.env
+.env.*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
