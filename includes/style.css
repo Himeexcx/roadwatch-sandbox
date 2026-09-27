@@ -79,6 +79,10 @@ a:hover {
     width: min(560px, calc(100% - 32px));
 }
 
+.semi-narrow {
+    width: min(860px, calc(100% - 32px));
+}
+
 .auth-page {
     display: grid;
     min-height: 100vh;
@@ -189,6 +193,10 @@ a:hover {
     font-size: 0.93rem;
 }
 
+.nav-links .nav-logout {
+    margin-left: auto;
+}
+
 form {
     display: grid;
     gap: 10px;
@@ -212,6 +220,14 @@ input, select, textarea {
 }
 
 .auth-card form button {
+    width: 100%;
+}
+
+.report-submit {
+    width: 100%;
+}
+
+.account-submit {
     width: 100%;
 }
 

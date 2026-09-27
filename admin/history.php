@@ -29,7 +29,10 @@ $result = mysqli_query($conn, $sql);
     <main class="page-shell">
         <section class="panel">
             <h1>Report history</h1>
-            <nav class="nav-links"><a href="reports.php">Back to pending reports</a><a href="../auth/logout.php">Logout</a></nav>
+            <nav class="nav-links">
+                <a class="button" a href="reports.php">Back to pending reports</a>
+                <a class="button nav-logout" href="../auth/logout.php">Log out</a>
+            </nav>
             <div class="table-wrap">
                 <table>
                     <tr>

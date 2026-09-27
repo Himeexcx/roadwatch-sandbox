@@ -60,11 +60,11 @@ $hazard_types = mysqli_query($conn, 'SELECT id, name FROM hazard_types ORDER BY 
     <main class="page-shell narrow">
         <section class="panel">
             <h1>Submit road hazard report</h1>
-            <nav class="nav-links"><a href="my_reports.php">Back to my reports</a><a href="../auth/logout.php">Logout</a></nav><?php if ($message): ?><p class="notice <?php echo str_starts_with($message, 'Failed') || str_starts_with($message, 'Please') ? 'error' : ''; ?>"><?php echo htmlspecialchars($message); ?></p><?php endif; ?><form method="POST" enctype="multipart/form-data"><label>Barangay</label><select name="barangay_id" required>
+            <nav class="nav-links"><a class="button" href="my_reports.php">Back to my reports</a><a class="button nav-logout" href="../auth/logout.php">Log out</a></nav><?php if ($message): ?><p class="notice <?php echo str_starts_with($message, 'Failed') || str_starts_with($message, 'Please') ? 'error' : ''; ?>"><?php echo htmlspecialchars($message); ?></p><?php endif; ?><form method="POST" enctype="multipart/form-data"><label>Barangay</label><select name="barangay_id" required>
                     <option value="">Select barangay</option><?php while ($barangay = mysqli_fetch_assoc($barangays)): ?><option value="<?php echo $barangay['id']; ?>"><?php echo htmlspecialchars($barangay['name']); ?></option><?php endwhile; ?>
                 </select><label>Hazard type</label><select name="hazard_type_id" required>
                     <option value="">Select hazard type</option><?php while ($hazard = mysqli_fetch_assoc($hazard_types)): ?><option value="<?php echo $hazard['id']; ?>"><?php echo htmlspecialchars($hazard['name']); ?></option><?php endwhile; ?>
-                </select><label>Road name</label><input type="text" name="road_name" required><label>Landmark</label><input type="text" name="landmark" required><label>Description</label><textarea name="description" rows="5" required></textarea><label>Road hazard photo</label><input type="file" name="photo" accept="image/jpeg,image/png,image/webp" required><button type="submit">Submit report</button></form>
+                </select><label>Road name</label><input type="text" name="road_name" required><label>Landmark</label><input type="text" name="landmark" required><label>Description</label><textarea name="description" rows="5" required></textarea><label>Road hazard photo</label><input type="file" name="photo" accept="image/jpeg,image/png,image/webp" required><button class="report-submit" type="submit">Submit report</button></form>
         </section>
     </main>
 </body>

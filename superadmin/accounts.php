@@ -47,16 +47,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <main class="page-shell">
+    <main class="page-shell semi-narrow">
         <section class="panel">
             <h1>Account management</h1>
-            <nav class="nav-links"><a class="button accent" href="../superadmin/existing_accounts.php"> Existing accounts</a><a class="button accent" href="../superadmin/create_user.php">Create user credentials</a><a href="../auth/logout.php">Logout</a></nav>
+            <nav class="nav-links"><a class="button" href="../superadmin/existing_accounts.php"> Existing accounts</a><a class="button" href="../superadmin/create_user.php">Create user credentials</a><a class="button nav-logout" a href="../auth/logout.php">Log out</a></nav>
             <h2>Add account</h2><?php if ($message): ?><p class="notice <?php echo str_contains($message, 'Unable') || str_contains($message, 'exists') || str_contains($message, 'valid') || str_contains($message, 'least') ? 'error' : ''; ?>"><?php echo htmlspecialchars($message); ?></p><?php endif; ?>
             <form method="POST"><label>Full name</label><input type="text" name="full_name" required><label>Email</label><input type="email" name="email" required><label>Password</label><input type="password" name="password" minlength="8" required><label>Security question</label><input type="text" name="security_question" required><label>Security answer</label><input type="text" name="security_answer" required><label>Role</label><select name="role" required>
                     <option value="">Select role</option>
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
-                </select><button type="submit">Add account</button></form>
+                </select><button type="report-submit">Add account</button></form>
         </section>
     </main>
 </body>

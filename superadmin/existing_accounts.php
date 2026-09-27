@@ -28,7 +28,10 @@ $accounts_result = mysqli_query(
     <main class="page-shell">
         <section class="panel">
             <h1>Account management</h1>
-            <nav class="nav-links"><a class="button accent" href="../superadmin/accounts.php">Go back</a><a href="../auth/logout.php">Logout</a></nav>
+            <nav class="nav-links">
+                <a class="button" href="../superadmin/accounts.php">Go back</a>
+                <a class="button nav-logout" href="../auth/logout.php">Log out</a>
+            </nav>
             <h2>Existing accounts</h2>
             <div class="table-wrap">
                 <table>
@@ -48,7 +51,7 @@ $accounts_result = mysqli_query(
                             <td><?php echo htmlspecialchars($account['role']); ?></td>
                             <td><?php echo $account['is_active'] ? 'Active' : 'Inactive'; ?></td>
                             <td><?php echo htmlspecialchars($account['created_at']); ?></td>
-                            <td><?php if ((int) $account['id'] !== (int) $_SESSION['user_id']): ?><a href="toggle_account.php?id=<?php echo $account['id']; ?>"><?php echo $account['is_active'] ? 'Deactivate' : 'Activate'; ?></a><?php else: ?>-<?php endif; ?></td>
+                            <td><?php if ((int) $account['id'] !== (int) $_SESSION['user_id']): ?><a class="button <?php echo $account['is_active'] ? 'danger' : ''; ?>" href="toggle_account.php?id=<?php echo $account['id']; ?>"><?php echo $account['is_active'] ? 'Deactivate' : 'Activate'; ?></a><?php else: ?>-<?php endif; ?></td>
                         </tr><?php endwhile; ?>
                 </table>
             </div>

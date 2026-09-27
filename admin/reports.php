@@ -49,10 +49,10 @@ $result = mysqli_query($conn, $sql);
         <section class="panel">
             <h1>Pending road reports</h1>
             <nav class="nav-links">
-                <a href="reports.php">Pending reports</a>
-                <a href="history.php">Report history</a>
-                <a href="create_user.php">Create user credentials</a>
-                <a href="../auth/logout.php">Logout</a>
+                <a class="button" href="reports.php">Pending reports</a>
+                <a class="button"a href="history.php">Report history</a>
+                <a class="button"a href="create_user.php">Create user credentials</a>
+                <a class="button nav-logout"a href="../auth/logout.php">Log out</a>
             </nav>
 
             <div class="table-wrap">

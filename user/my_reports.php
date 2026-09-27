@@ -28,7 +28,7 @@ $result = mysqli_stmt_get_result($stmt);
         <main class="page-shell">
                 <section class="panel">
                         <h1>My road reports</h1>
-                        <nav class="nav-links"><a href="submit_report.php">Submit new report</a><a href="../auth/logout.php">Logout</a></nav>
+                        <nav class="nav-links"><a class="button" href="submit_report.php">Submit new report</a><a class="button nav-logout" href="../auth/logout.php">Logout</a></nav>
                         <div class="table-wrap">
                                 <table>
                                         <tr>

@@ -57,7 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main class="page-shell narrow">
         <section class="panel">
-            <nav class="nav-links"><a href="../superadmin/accounts.php">Go Back</a><a href="../auth/logout.php">Logout</a></nav>
+            <nav class="nav-links">
+                <a class="button" href="../superadmin/accounts.php">Go Back</a>
+                <a class="button nav-logout" href="../auth/logout.php">Log out</a></nav>
             <h1>Create user credentials</h1>
             <p class="muted">Manual registration creates a standard user account that can submit reports.</p>
             <?php if ($message): ?><p class="notice <?php echo $message_type === 'error' ? 'error' : ''; ?>"><?php echo htmlspecialchars($message); ?></p><?php endif; ?>
@@ -67,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="password">Temporary password</label><input id="password" type="password" name="password" minlength="8" required>
                 <label for="security_question">Security question</label><input id="security_question" type="text" name="security_question" required>
                 <label for="security_answer">Security answer</label><input id="security_answer" type="text" name="security_answer" required>
-                <button type="submit">Create user account</button>
+                <button type="account-submit">Create user account</button>
             </form>
         </section>
     </main>
